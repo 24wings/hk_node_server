@@ -10,10 +10,10 @@ let dbName = `org_test`;
 export let conn = new Connection({
 
   type: "mysql",
-  host: "localhost",
+  host: "47.95.203.108",
   port: 3306,
   username: "root",
-  password: "lwm740130",
+  password: "!*@&#%$N1Nadmindb2017",
   database: dbName,
   entities: [
     FrameworkEntityPath,
