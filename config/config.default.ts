@@ -68,7 +68,7 @@ export default (appInfo: EggAppConfig) => {
   // };
   config.cluster = {
     listen: {
-      port: 9091,
+      port: 8080,
       hostname: "0.0.0.0"
       // path: '/var/run/egg.sock',
     }
