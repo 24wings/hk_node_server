@@ -13,7 +13,7 @@ export let conn = new Connection({
   host: "47.95.203.108",
   port: 3306,
   username: "root",
-  password: "!*@&#%$N1Nadmindb2017",
+  password: "!*@&#%$N1N",
   database: dbName,
   entities: [
     FrameworkEntityPath,
