@@ -15,7 +15,7 @@ import { FeeList } from '../../share_platform/market/entity/synthesizeFee/FeeLis
 import { TransArea } from '../../share_platform/market/entity/common/TransArea';
 import { ProdCatalog } from '../../share_platform/market/entity/common/ProdCatalog';
 import { MetaObject } from '../../share_platform/framework/entity/rbac/MetaObject';
-import { connection } from '../../mysql';
+// import { connection } from '../../mysql';
 import { MetaField } from '../../share_platform/framework/entity/rbac/MetaField';
 import { CustCard } from '../../share_platform/market/entity/member/CustCard';
 import { TransFeeRule } from '../../share_platform/market/entity/common/TransFeeRule';
@@ -377,50 +377,50 @@ export default class extends Controller {
 
         this.ctx.body = success({ metaObject });
     }
-    @bp.post('/api/design/field')
-    async designField() {
-        let { sql } = this.ctx.request.body;
-        sql = this.replaceVartoNull(sql);
-        console.log(sql);
-        try {
-            let result = await new Promise<any>(resolve => {
-                connection
-                    .execute(
-                        sql,
-                        function (err, results, fields) {
-                            console.log(results, fields);
-                            resolve({
-                                err, data: results, fields: fields.map((field: MysqlMetaFieldType) => {
-                                    let type: string = '';
-                                    /**解析 type */
-                                    switch (field.columnType) {
-                                        case 3:
-                                        case 246:
-                                        case 254:
-                                            type = 'int';
-                                            break;
-                                        case 253:
-                                            type = 'varchar'
-                                            break;
-                                        case 12:
-                                            type = 'datetime'
-                                            break;
-                                        // decimal
+    // @bp.post('/api/design/field')
+    // async designField() {
+    //     let { sql } = this.ctx.request.body;
+    //     sql = this.replaceVartoNull(sql);
+    //     console.log(sql);
+    //     try {
+    //         let result = await new Promise<any>(resolve => {
+    //             connection
+    //                 .execute(
+    //                     sql,
+    //                     function (err, results, fields) {
+    //                         console.log(results, fields);
+    //                         resolve({
+    //                             err, data: results, fields: fields.map((field: MysqlMetaFieldType) => {
+    //                                 let type: string = '';
+    //                                 /**解析 type */
+    //                                 switch (field.columnType) {
+    //                                     case 3:
+    //                                     case 246:
+    //                                     case 254:
+    //                                         type = 'int';
+    //                                         break;
+    //                                     case 253:
+    //                                         type = 'varchar'
+    //                                         break;
+    //                                     case 12:
+    //                                         type = 'datetime'
+    //                                         break;
+    //                                     // decimal
 
-                                    }
-                                    console.log(field);
-                                    return { type, field: field.name, pure: field }
-                                })
-                            }); // results contains rows returned by server
-                        }
-                    );
-            });
-            this.ctx.body = { ok: true, data: result };
-        } catch (e) {
-            if (e) this.ctx.body = err(500, 'sql错误');
-        }
+    //                                 }
+    //                                 console.log(field);
+    //                                 return { type, field: field.name, pure: field }
+    //                             })
+    //                         }); // results contains rows returned by server
+    //                     }
+    //                 );
+    //         });
+    //         this.ctx.body = { ok: true, data: result };
+    //     } catch (e) {
+    //         if (e) this.ctx.body = err(500, 'sql错误');
+    //     }
 
-    }
+    // }
     replaceVartoNull(sql: string): string {
         return sql.replace(/@\S+/ig, 'null');
     }

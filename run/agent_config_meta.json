@@ -209,7 +209,8 @@
       "autod": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
       "lint": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
       "clean": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
-      "build": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+      "build": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "package": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
     },
     "dependencies": {
       "@alicloud/sms-sdk": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",

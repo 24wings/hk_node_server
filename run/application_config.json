@@ -241,7 +241,8 @@
         "autod": "autod",
         "lint": "tslint .",
         "clean": "ets clean",
-        "build": "SET_PUBLIC_PATH=true roadhog build"
+        "build": "SET_PUBLIC_PATH=true roadhog build",
+        "package": "tar -zcvf ../release.tgz ."
       },
       "dependencies": {
         "@alicloud/sms-sdk": "^1.1.2",
@@ -417,7 +418,7 @@
     "cluster": {
       "listen": {
         "path": "",
-        "port": 9090,
+        "port": 9091,
         "hostname": "0.0.0.0"
       }
     },
