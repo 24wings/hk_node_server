@@ -1,0 +1,359 @@
+{
+  "sourceUrl": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+  "keys": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+  "middleware": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+  "cluster": {
+    "listen": {
+      "port": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "hostname": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    }
+  },
+  "bodyParser": {
+    "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "jsonLimit": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "formLimit": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "encoding": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "strict": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "depth": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    }
+  },
+  "security": {
+    "protocolWhiteList": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "domainWhiteList": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "allowMethods": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "xframe": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "value": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "csrf": {
+      "ignoreJSON": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "ignore": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.default.ts",
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "ignore": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "defaultMiddleware": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+    "hsts": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "view": {
+    "defaultViewEngine": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "mapping": {
+      "html": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts"
+    },
+    "root": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "cache": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+    "dir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-static/config/config.default.js"
+  },
+  "oss": {
+    "client": {
+      "accessKeyId": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "accessKeySecret": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "bucket": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "endpoint": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts",
+      "timeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/config.local.ts"
+    },
+    "default": {
+      "timeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-oss/config/config.default.js"
+    },
+    "useAgent": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-oss/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart/config/config.default.js"
+  },
+  "development": {
+    "watchDirs": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-development/config/config.default.js"
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view-nunjucks/config/config.default.js",
+    "throwOnUndefined": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view-nunjucks/config/config.default.js",
+    "trimBlocks": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view-nunjucks/config/config.default.js",
+    "lstripBlocks": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view-nunjucks/config/config.default.js",
+    "cache": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view-nunjucks/config/config.local.js"
+  },
+  "env": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "name": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "version": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "description": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "private": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "egg": {
+      "typescript": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "pm2:start": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "migrate:new": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "migrate:up": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "migrate:down": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "start": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "stop": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "dev": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "debug": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "test": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "cov": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "tsc": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "ci": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "autod": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "lint": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "clean": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "build": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "dependencies": {
+      "@alicloud/sms-sdk": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/cheerio": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/graphql": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/ip": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/jsonwebtoken": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/mongoose": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/mysql": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/request": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/request-promise": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/sequelize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/swagger-ui-dist": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/xml2js": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "ali-mns": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "apollo-server": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "apollo-server-koa": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "cheerio": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "cloudinary": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "co-wechat": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "decimal.js": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-alinode": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-blueprint": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-cluster": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-cors": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-mongoose": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-mysql": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-oss": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-sequelize": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-static": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "graphql": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "ip": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "jsonwebtoken": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "mysql": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "mysql2": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "qr-image": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "raw-socket": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "reflect-metadata": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "request": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "request-promise": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "swagger-ui-dist": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "typeorm": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "wechat-api": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "wechat-oauth": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "wechat-pay": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "xml2js": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "@types/mocha": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/node": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "@types/supertest": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "autod": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "egg-ts-helper": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "node-sass": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "tslib": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "tslint": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "typescript": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "url": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "eslintIgnore": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "author": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "license": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "env": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "level": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxAge": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+    "logging": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js",
+  "clusterClient": {
+    "responseTimeout": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/config.default.js"
+}

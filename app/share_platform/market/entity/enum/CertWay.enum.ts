@@ -1,0 +1,5 @@
+export enum CertWayEnum {
+    WEB_PASS_NOAUTH = "WEB_PASS_NOAUTH",
+    APP_AUTH = "APP_AUTH",
+    FOURELEMENTS_AUTH = "FOURELEMENTS_AUTH"
+}

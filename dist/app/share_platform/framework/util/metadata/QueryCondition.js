@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class QueryCondition {
+}
+exports.QueryCondition = QueryCondition;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUXVlcnlDb25kaXRpb24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi9hcHAvc2hhcmVfcGxhdGZvcm0vZnJhbWV3b3JrL3V0aWwvbWV0YWRhdGEvUXVlcnlDb25kaXRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQTtDQU1DO0FBTkQsd0NBTUMifQ==

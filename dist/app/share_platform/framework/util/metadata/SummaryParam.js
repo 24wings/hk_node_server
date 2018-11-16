@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class SummaryParam {
+}
+exports.SummaryParam = SummaryParam;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU3VtbWFyeVBhcmFtLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vYXBwL3NoYXJlX3BsYXRmb3JtL2ZyYW1ld29yay91dGlsL21ldGFkYXRhL1N1bW1hcnlQYXJhbS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUdBO0NBTUM7QUFORCxvQ0FNQyJ9

@@ -1,0 +1,564 @@
+{
+  "config": {
+    "session": {
+      "maxAge": 86400000,
+      "key": "EGG_SESS",
+      "httpOnly": true,
+      "encrypt": true
+    },
+    "security": {
+      "domainWhiteList": [
+        "www.airuanjian.vip",
+        "open.weixin.qq.com",
+        "http://localhost",
+        "localhost:4200",
+        "manage.airuanjian.vip",
+        "2a0808e1.ngrok.io"
+      ],
+      "protocolWhiteList": [
+        "http"
+      ],
+      "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
+      "csrf": {
+        "enable": true,
+        "useSession": false,
+        "ignoreJSON": true,
+        "cookieName": "csrfToken",
+        "sessionName": "csrfToken",
+        "headerName": "x-csrf-token",
+        "bodyName": "_csrf",
+        "queryName": "_csrf",
+        "ignore": "<Function ignore>"
+      },
+      "xframe": {
+        "enable": false,
+        "value": "SAMEORIGIN"
+      },
+      "hsts": {
+        "enable": false,
+        "maxAge": 31536000,
+        "includeSubdomains": false
+      },
+      "dta": {
+        "enable": true
+      },
+      "methodnoallow": {
+        "enable": true
+      },
+      "noopen": {
+        "enable": true
+      },
+      "nosniff": {
+        "enable": true
+      },
+      "referrerPolicy": {
+        "enable": false,
+        "value": "no-referrer-when-downgrade"
+      },
+      "xssProtection": {
+        "enable": true,
+        "value": "1; mode=block"
+      },
+      "csp": {
+        "enable": false,
+        "policy": {},
+        "ignore": "<Function ignore>"
+      },
+      "ssrf": {
+        "ipBlackList": null,
+        "checkAddress": null
+      },
+      "allowMethods": [
+        "GET",
+        "HEAD",
+        "PUT",
+        "POST",
+        "DELETE",
+        "PATCH",
+        "OPTIONS"
+      ]
+    },
+    "helper": {
+      "shtml": {}
+    },
+    "jsonp": {
+      "limit": 50,
+      "callback": [
+        "_callback",
+        "callback"
+      ],
+      "csrf": false
+    },
+    "onerror": {
+      "errorPageUrl": "",
+      "appErrorFilter": null
+    },
+    "i18n": {
+      "defaultLocale": "en_US",
+      "dirs": [],
+      "queryField": "locale",
+      "cookieField": "locale",
+      "cookieMaxAge": "1y"
+    },
+    "watcher": {
+      "type": "development",
+      "eventSources": {
+        "default": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-watcher/lib/event-sources/development"
+      }
+    },
+    "multipart": {
+      "autoFields": false,
+      "defaultCharset": "utf8",
+      "fieldNameSize": 100,
+      "fieldSize": "100kb",
+      "fields": 10,
+      "fileSize": "10mb",
+      "files": 10,
+      "fileExtensions": [],
+      "whitelist": null
+    },
+    "development": {
+      "watchDirs": [],
+      "ignoreDirs": [],
+      "fastReady": false,
+      "reloadOnDebug": true,
+      "overrideDefault": false
+    },
+    "customLogger": {
+      "scheduleLogger": {
+        "consoleLevel": "NONE",
+        "file": "/Users/yangjie/workspace/hk_node_server/hk_node_server/logs/showcase/egg-schedule.log"
+      }
+    },
+    "logrotator": {
+      "filesRotateByHour": null,
+      "hourDelimiter": "-",
+      "filesRotateBySize": null,
+      "maxFileSize": 52428800,
+      "maxFiles": 10,
+      "rotateDuration": 60000,
+      "maxDays": 31
+    },
+    "static": {
+      "prefix": "/public",
+      "dir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/app/public",
+      "dynamic": true,
+      "preload": false,
+      "buffer": false,
+      "maxFiles": 1000
+    },
+    "view": {
+      "root": "/Users/yangjie/workspace/hk_node_server/hk_node_server/app/views",
+      "cache": false,
+      "defaultExtension": ".html",
+      "defaultViewEngine": "nunjucks",
+      "mapping": {
+        "html": "nunjucks"
+      }
+    },
+    "oss": {
+      "default": {
+        "timeout": "60s"
+      },
+      "useAgent": false,
+      "client": {
+        "accessKeyId": "LTAIcMnaxxUG7dbk",
+        "accessKeySecret": "<String len: 30>",
+        "bucket": "bangwei-store",
+        "endpoint": "oss-cn-beijing.aliyuncs.com",
+        "timeout": "60s"
+      }
+    },
+    "nunjucks": {
+      "autoescape": true,
+      "throwOnUndefined": false,
+      "trimBlocks": false,
+      "lstripBlocks": false,
+      "cache": false
+    },
+    "env": "local",
+    "name": "showcase",
+    "keys": "<String len: 27>",
+    "proxy": false,
+    "protocolHeaders": "x-forwarded-proto",
+    "ipHeaders": "x-forwarded-for",
+    "hostHeaders": "",
+    "pkg": {
+      "name": "showcase",
+      "version": "1.0.0",
+      "description": "",
+      "private": true,
+      "egg": {
+        "typescript": true
+      },
+      "scripts": {
+        "pm2:start": "pm2 start server.js",
+        "migrate:new": "egg-sequelize migration:create",
+        "migrate:up": "egg-sequelize db:migrate",
+        "migrate:down": "egg-sequelize db:migrate:undo",
+        "start": "egg-scripts start --port 9090  --title=egg-server-showcase",
+        "stop": "egg-scripts stop --title=egg-server-showcase",
+        "dev": "egg-bin dev -r egg-ts-helper/register",
+        "debug": "egg-bin debug -r egg-ts-helper/register",
+        "test-local": "egg-bin test -r egg-ts-helper/register",
+        "test": "npm run lint -- --fix && npm run test-local",
+        "cov": "egg-bin cov -r egg-ts-helper/register",
+        "tsc": "ets && tsc -p tsconfig.json",
+        "ci": "npm run lint && npm run cov && npm run tsc",
+        "autod": "autod",
+        "lint": "tslint .",
+        "clean": "ets clean",
+        "build": "SET_PUBLIC_PATH=true roadhog build"
+      },
+      "dependencies": {
+        "@alicloud/sms-sdk": "^1.1.2",
+        "@types/cheerio": "^0.22.8",
+        "@types/graphql": "^0.13.4",
+        "@types/ip": "0.0.31",
+        "@types/jsonwebtoken": "^7.2.8",
+        "@types/mongoose": "^5.0.10",
+        "@types/mysql": "^2.15.5",
+        "@types/request": "^2.47.1",
+        "@types/request-promise": "^4.1.42",
+        "@types/sequelize": "^4.27.16",
+        "@types/swagger-ui-dist": "^3.0.0",
+        "@types/xml2js": "^0.4.3",
+        "ali-mns": "^2.6.5",
+        "apollo-server": "^2.0.0",
+        "apollo-server-koa": "^2.0.0",
+        "cheerio": "^1.0.0-rc.2",
+        "cloudinary": "^1.11.0",
+        "co-wechat": "^2.3.0",
+        "decimal.js": "^10.0.1",
+        "egg": "^2.6.1",
+        "egg-alinode": "^2.0.1",
+        "egg-blueprint": "^1.2.1",
+        "egg-cluster": "^1.19.1",
+        "egg-cors": "^2.0.0",
+        "egg-mongoose": "^2.2.0",
+        "egg-mysql": "^3.0.0",
+        "egg-oss": "^1.1.0",
+        "egg-scripts": "^2.6.0",
+        "egg-sequelize": "^3.1.3",
+        "egg-static": "^2.1.0",
+        "egg-view-nunjucks": "^2.2.0",
+        "graphql": "^0.13.2",
+        "ip": "^1.1.5",
+        "jsonwebtoken": "^8.3.0",
+        "mysql": "^2.16.0",
+        "mysql2": "^1.5.3",
+        "qr-image": "^3.2.0",
+        "raw-socket": "^1.6.3",
+        "reflect-metadata": "^0.1.12",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.2",
+        "swagger-ui-dist": "^3.18.0",
+        "typeorm": "^0.2.7",
+        "wechat-api": "^1.35.1",
+        "wechat-oauth": "^1.4.0",
+        "wechat-pay": "^0.3.2",
+        "xml2js": "^0.4.19"
+      },
+      "devDependencies": {
+        "@types/mocha": "^2.2.40",
+        "@types/node": "^7.0.12",
+        "@types/supertest": "^2.0.0",
+        "autod": "^3.0.1",
+        "autod-egg": "^1.1.0",
+        "egg-bin": "^4.6.2",
+        "egg-ci": "^1.8.0",
+        "egg-mock": "^3.16.0",
+        "egg-ts-helper": "^1.4.2",
+        "node-sass": "^4.9.3",
+        "tslib": "^1.9.0",
+        "tslint": "^4.0.0",
+        "typescript": "^2.8.1"
+      },
+      "engines": {
+        "node": ">=8.9.0"
+      },
+      "ci": {
+        "version": "8"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "eslintIgnore": [
+        "coverage"
+      ],
+      "author": "",
+      "license": "MIT"
+    },
+    "baseDir": "/Users/yangjie/workspace/hk_node_server/hk_node_server",
+    "HOME": "/var/root",
+    "rundir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/run",
+    "dump": {
+      "ignore": "<Set>"
+    },
+    "confusedConfigurations": {
+      "bodyparser": "bodyParser",
+      "notFound": "notfound",
+      "sitefile": "siteFile",
+      "middlewares": "middleware",
+      "httpClient": "httpclient"
+    },
+    "notfound": {
+      "pageUrl": ""
+    },
+    "siteFile": {
+      "/favicon.ico": "<Buffer len: 6463>"
+    },
+    "bodyParser": {
+      "enable": true,
+      "encoding": "utf8",
+      "formLimit": "1000mb",
+      "jsonLimit": "1000mb",
+      "strict": true,
+      "queryString": {
+        "arrayLimit": 100,
+        "depth": 5,
+        "parameterLimit": 1000
+      }
+    },
+    "logger": {
+      "dir": "/Users/yangjie/workspace/hk_node_server/hk_node_server/logs/showcase",
+      "encoding": "utf8",
+      "env": "local",
+      "level": "INFO",
+      "consoleLevel": "INFO",
+      "disableConsoleAfterReady": false,
+      "outputJSON": false,
+      "buffer": true,
+      "appLogName": "showcase-web.log",
+      "coreLogName": "egg-web.log",
+      "agentLogName": "egg-agent.log",
+      "errorLogName": "common-error.log",
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
+      "allowDebugAtProd": true,
+      "type": "agent"
+    },
+    "httpclient": {
+      "enableDNSCache": false,
+      "dnsCacheMaxLength": 1000,
+      "dnsCacheMaxAge": 10000,
+      "request": {
+        "timeout": 5000
+      },
+      "httpAgent": {
+        "keepAlive": true,
+        "freeSocketKeepAliveTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256
+      },
+      "httpsAgent": {
+        "keepAlive": true,
+        "freeSocketKeepAliveTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256
+      }
+    },
+    "meta": {
+      "enable": true,
+      "logging": false
+    },
+    "coreMiddleware": [
+      "meta",
+      "siteFile",
+      "notfound",
+      "bodyParser",
+      "overrideMethod"
+    ],
+    "workerStartTimeout": 600000,
+    "cluster": {
+      "listen": {
+        "path": "",
+        "port": 9090,
+        "hostname": "0.0.0.0"
+      }
+    },
+    "clusterClient": {
+      "responseTimeout": 60000
+    },
+    "onClientError": null,
+    "sourceUrl": "https://github.com/eggjs/examples/tree/master/showcase",
+    "middleware": [],
+    "coreMiddlewares": "~config~coreMiddleware",
+    "appMiddlewares": "~config~middleware",
+    "appMiddleware": "~config~middleware"
+  },
+  "plugins": {
+    "session": {
+      "enable": true,
+      "package": "egg-session",
+      "name": "session",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-session",
+      "version": "3.1.0"
+    },
+    "security": {
+      "enable": true,
+      "package": "egg-security",
+      "name": "security",
+      "dependencies": [],
+      "optionalDependencies": [
+        "session"
+      ],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-security",
+      "version": "2.2.2"
+    },
+    "jsonp": {
+      "enable": true,
+      "package": "egg-jsonp",
+      "name": "jsonp",
+      "dependencies": [],
+      "optionalDependencies": [
+        "security"
+      ],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-jsonp",
+      "version": "2.0.0"
+    },
+    "onerror": {
+      "enable": true,
+      "package": "egg-onerror",
+      "name": "onerror",
+      "dependencies": [],
+      "optionalDependencies": [
+        "jsonp"
+      ],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-onerror",
+      "version": "2.0.0"
+    },
+    "i18n": {
+      "enable": true,
+      "package": "egg-i18n",
+      "name": "i18n",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-i18n",
+      "version": "2.0.0"
+    },
+    "watcher": {
+      "enable": true,
+      "package": "egg-watcher",
+      "name": "watcher",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-watcher",
+      "version": "3.0.0"
+    },
+    "multipart": {
+      "enable": true,
+      "package": "egg-multipart",
+      "name": "multipart",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-multipart",
+      "version": "2.0.0"
+    },
+    "development": {
+      "enable": true,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-development",
+      "version": "2.2.0"
+    },
+    "schedule": {
+      "enable": true,
+      "package": "egg-schedule",
+      "name": "schedule",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-schedule",
+      "version": "3.3.0"
+    },
+    "logrotator": {
+      "enable": true,
+      "package": "egg-logrotator",
+      "name": "logrotator",
+      "dependencies": [
+        "schedule"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-logrotator",
+      "version": "3.0.3"
+    },
+    "static": {
+      "enable": true,
+      "name": "static",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/plugin.ts",
+      "package": "egg-static",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-static",
+      "version": "2.1.0"
+    },
+    "view": {
+      "enable": true,
+      "package": "egg-view",
+      "name": "view",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg/config/plugin.js",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view",
+      "version": "2.1.0"
+    },
+    "oss": {
+      "enable": true,
+      "package": "egg-oss",
+      "name": "oss",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/plugin.ts",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-oss",
+      "version": "1.1.0"
+    },
+    "nunjucks": {
+      "enable": true,
+      "package": "egg-view-nunjucks",
+      "name": "nunjucks",
+      "dependencies": [
+        "security",
+        "view"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/yangjie/workspace/hk_node_server/hk_node_server/config/plugin.ts",
+      "path": "/Users/yangjie/workspace/hk_node_server/hk_node_server/node_modules/egg-view-nunjucks",
+      "version": "2.2.0"
+    }
+  }
+}
