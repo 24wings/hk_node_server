@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { MetaEntity } from '../../util/metadata/MetaEntity';
 import { Prop } from '../../util/metadata/Field';
 @MetaEntity()
-@Entity({ synchronize: false })
+@Entity()
 export class Org {
     @PrimaryGeneratedColumn()
     @Prop()

@@ -13,8 +13,8 @@ export class AirCompany {
     @Column({ nullable: false })
     /**航司全名*/
     name: string;
-    @Column({ nullable: false })
+    // @Column({ nullable: false })
     /**航司简称*/
-    shortNam: string;
+    // shortNam: string;
 
 }

@@ -51,7 +51,7 @@ export default class extends Service {
         conditions.forEach((condition, i) => {
             if (condition.compare == ':') condition.compare = 'like';
             if (condition.compare == 'like') condition.value = `%${condition.value}%`
-            whereSql += `${condition.field} ${condition.compare} ${typeof condition.value == 'string' ? `'${condition.value}'` : condition.value} ${i == conditions.length - 1 ? '' : condition.andOr + ' '}`
+            whereSql += `${condition.field} ${condition.compare} ${typeof condition.value == 'string' && condition.compare != 'in' ? `'${condition.value}'` : condition.value} ${i == conditions.length - 1 ? '' : condition.andOr + ' '}`
         })
         if (!whereSql) whereSql = '1=1'
         return whereSql;
