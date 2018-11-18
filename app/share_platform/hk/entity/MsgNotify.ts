@@ -25,9 +25,9 @@ export class MsgNotify {
     addition: string;// 附加内容
     @Column()
     createTime: Date = new Date();// 创建时间
-    @Column()
+    @Column({ nullable: true })
     creatorId: string;// 创建人Id
-    @Column()
+    @Column({ nullable: true })
     creator: string;// 创建人姓名
     @Column()
     isRead: boolean = false;

@@ -1,11 +1,12 @@
 import {
-    PrimaryGeneratedColumn, Column, Entity,
+    PrimaryGeneratedColumn, Column, Entity, OneToOne, JoinColumn,
     // OneToOne, JoinColumn 
 } from 'typeorm';
 import { MemberType } from '../enum/MemberType.enum';
 import { AuditStatusEnum } from '../enum/AuditStatus.enum';
 import { MetaEntity } from '../../framework/util/metadata/MetaEntity';
 import { Prop } from '../../framework/util/metadata/Field';
+import { User } from '../../framework/entity/rbac/User';
 // import { User } from '../../framework/entity/rbac/User';
 
 /**
@@ -48,12 +49,12 @@ export class Member {
     /**审核状态*/
     @Column("enum", { enum: AuditStatusEnum })
     memberStatus: AuditStatusEnum;
-    // @OneToOne(() => User)
-    // @JoinColumn()
-    // user: User;
+    @OneToOne(() => User)
+    @JoinColumn()
+    user: User;
     /**前端字段 */
     password?: string | any;
     /**前端字段 */
     orgId?: number;
-    user?: any;
+    // user?: any;
 }

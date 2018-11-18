@@ -66,4 +66,18 @@ export class Order {
     remark: string;
     @Column({ comment: '会员名称' })
     memberName: string;
+    @Column({ nullable: true })
+    startCityId: number;
+    @Column({ nullable: true })
+    startCityName: string;
+    @Column({ nullable: true })
+    stopCityId: number;
+    @Column({ nullable: true })
+    stopCityName: string;
+    @Column({ nullable: true })
+    unionCityId: number;
+    @Column({ nullable: true })
+    unionCityName: string;
+    @Column({ comment: '订单负责人', nullable: true })
+    masterMemberId: number
 }

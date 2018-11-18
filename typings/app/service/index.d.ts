@@ -9,6 +9,7 @@ import FrameworkMsg from '../../../app/service/framework/msg';
 import FrameworkStq from '../../../app/service/framework/stq';
 import FrameworkUtil from '../../../app/service/framework/util';
 import LibMsg from '../../../app/service/lib/msg';
+import LibNotify from '../../../app/service/lib/notify';
 import LibOss from '../../../app/service/lib/oss';
 import LibQrcode from '../../../app/service/lib/qrcode';
 import LibSms from '../../../app/service/lib/sms';
@@ -28,6 +29,7 @@ declare module 'egg' {
     };
     lib: {
       msg: LibMsg;
+      notify: LibNotify;
       oss: LibOss;
       qrcode: LibQrcode;
       sms: LibSms;

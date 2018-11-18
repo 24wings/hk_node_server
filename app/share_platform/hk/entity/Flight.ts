@@ -31,6 +31,8 @@ export class Flight extends BaseAduitEntity {
     /**出发机场三字代码*/
     startAirportCode: string;
     @Column()
+    startCityId: number;
+    @Column()
     startCityCode: string;
 
     @Column()
@@ -47,6 +49,8 @@ export class Flight extends BaseAduitEntity {
     stopAirportName: string;
     @Column()
     stopCityCode: string;
+    @Column()
+    stopCityId: number;
     @Column()
     /**经停到达时间*/
     stopTime: Date;

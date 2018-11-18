@@ -436,6 +436,18 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/product/query",
+    "regexp": "/^\\/api\\/product\\/query(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/product/create",
     "regexp": "/^\\/api\\/product\\/create(?:\\/(?=$))?$/",
     "stack": [
@@ -462,6 +474,66 @@
     "paramNames": [],
     "path": "/api/supplier/signup",
     "regexp": "/^\\/api\\/supplier\\/signup(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/aggent/signup",
+    "regexp": "/^\\/api\\/aggent\\/signup(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/member/verify/pass",
+    "regexp": "/^\\/api\\/member\\/verify\\/pass(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/member/verify/fail",
+    "regexp": "/^\\/api\\/member\\/verify\\/fail(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/order/give",
+    "regexp": "/^\\/api\\/order\\/give(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/order/action",
+    "regexp": "/^\\/api\\/order\\/action(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]

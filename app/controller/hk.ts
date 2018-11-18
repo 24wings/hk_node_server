@@ -12,10 +12,18 @@ import { Menu } from '../share_platform/framework/entity/rbac/Menu';
 import { err } from '../share_platform/framework/util/res/err';
 import { AuditStatusEnum } from '../share_platform/hk/enum/AuditStatus.enum';
 import { Airport } from '../share_platform/hk/entity/Airport';
-import { ProductUnion } from '../share_platform/hk/entity/ProductUnion';
-import { City } from '../share_platform/hk/entity/City';
-import { error } from 'util';
+import { Org } from '../share_platform/framework/entity/rbac/Org';
+import { Order } from '../share_platform/hk/entity/Order';
+import { OrderStatusEnum } from '../share_platform/hk/enum/OrderStatus.enum';
+enum ActionEnum {
+    orderConfirm = 'order-confirm',
+    depositPaid = 'deposit-paid',
+    fullAmount = 'full-amount',
+    outTicket = "out-ticket",
+    orderCancel = 'order-cancel',
 
+
+}
 
 export default class extends Controller {
     @Post('/dev/sync')
@@ -66,35 +74,36 @@ export default class extends Controller {
             this.ctx.body = err(400, "手机号已经被占用");
         }
     }
+    @Post('/api/product/query')
+    async productQuery() {
+        let query: { fromDate, toDate, fromCity, toCity } = this.ctx.request.body;
+        let res = await conn.query(`SELECT * FROM org_test.v_product_qry 
+        where boundDates like ? 
+        and returnDates like ?
+        and unionCityId = ?
+        and stopCityId = ?
+        
+        `, [
+                '%' + query.fromDate + '%',
+                '%' + query.toDate + '%',
+                query.fromCity,
+                query.toCity
+            ]);
+        let products = await conn.getRepository(Product).findByIds(res.map(item => item.id));
+        this.ctx.body = success({ query, paging: { rows: products, count: products.length } });
+    }
 
     @Post('/api/product/create')
     async  productCreate() {
         /**产品代码(出发地+到达地+航司2字代码+4位流水号 例:WUHBKKCZ0001)*/
         let product: Product = this.ctx.request.body;
-
         let startAirport = await conn.getRepository(Airport).findOne({ code: product.boundFlight.startAirportCode });
         let endAirport = await conn.getRepository(Airport).findOne({ code: product.boundFlight.startAirportCode });
         if (startAirport && endAirport) {
-
             let no = startAirport.cityCode + endAirport.cityCode + product.boundFlight.airCompanyCode;
             let code = await this.service.framework.util.getNo('order');
             product.code = no + _.padStart(code + '', 4, "0");
             product = await conn.getRepository(Product).save(product);
-            product.boundFlight;
-            let defaultProductUnion = new ProductUnion();
-            let startCity = await conn.getRepository(City).findOne({ code: product.boundFlight.startCityCode });
-            if (startCity) {
-                defaultProductUnion.cityCode = startCity.code;
-                defaultProductUnion.cityName = startCity.name;
-                defaultProductUnion.cityPinyin = startCity.pinyin;
-                defaultProductUnion.productId = product.id;
-                defaultProductUnion.unionPrice = 0;
-                conn.getRepository(ProductUnion).save(defaultProductUnion);
-            } else {
-                this.ctx.body = error(400, '找不到出发的城市');
-            }
-
-
             this.ctx.body = success(product);
         } else {
             this.ctx.body = err(400, '未知的航班')
@@ -120,6 +129,8 @@ export default class extends Controller {
                     roles.forEach(role => menuIds.push(...role.menuIds.split(',').filter(id => id).map(id => parseInt(id))))
                     menuIds = _.uniq(menuIds);
                     menus = await conn.getRepository(Menu).findByIds(menuIds);
+                } else {
+                    return this.ctx.body = err(400, '用户尚未通过认证')
                 }
                 user.password == password ?
                     this.ctx.body = success({ employee: user, menus, member, token: this.service.framework.jwt.sign({ id: user.id, menuIds }) }, '登陆成功') : this.ctx.body = err(400, '密码错误');
@@ -141,6 +152,7 @@ export default class extends Controller {
         user.name = member.name;
         user.orgId = member.orgId as number;
         user.password = member.password as string;
+        user.roleIds = '102';
         if (!exsitMember) {
             let no = await this.service.framework.util.getNo(member.memberType + '');
             switch (member.memberType) {
@@ -167,4 +179,141 @@ export default class extends Controller {
             this.ctx.body = err(400, "手机号已经被占用");
         }
     }
+    @Post("/api/aggent/signup")
+    async aggentSignup() {
+        let member: Member = this.ctx.request.body;
+        let mobile = member.mobile;
+        let exsitMember = await conn.getRepository(Member).findOne({ where: { mobile } });
+        let user = new User();
+        user.userName = member.mobile;
+        user.name = member.name;
+        user.orgId = member.orgId as number;
+        user.password = member.password as string;
+        user.roleIds = '104';
+        if (!exsitMember) {
+            let no = await this.service.framework.util.getNo(member.memberType + '');
+            switch (member.memberType) {
+                case MemberType.AGENT:
+                    member.code = 'A' + _.padStart(no + '', 8, "0");
+                    user.roleIds = '103';
+                    break;
+                case MemberType.CONSUMER:
+                    member.code = 'C' + _.padStart(no + '', 8, "0");
+                    user.roleIds = '104';
+
+                    break;
+                case MemberType.SUPPLIER:
+                    member.code = 'S' + _.padStart(no + '', 8, "0");
+                    user.roleIds = '102';
+                    break;
+            }
+            user = await conn.getRepository(User).save(user);
+            member.user = user;
+            let insert = await conn.getRepository(Member).save(member);
+            this.ctx.body = success({ insert });
+
+        } else {
+            this.ctx.body = err(400, "手机号已经被占用");
+        }
+    }
+    /**
+     * member  
+     * 供应商  orgId=3
+     * 代理商 orgId =5
+     */
+    @Post('/api/member/verify/pass')
+    async verifyMemberPass() {
+        let member: Member = this.ctx.request.body;
+        let dbMember = await conn.getRepository(Member).findOne(member.id);
+        if (dbMember) {
+            let newSuppilerOrg = new Org();
+            newSuppilerOrg.createTime = new Date();
+            newSuppilerOrg.isSystem = false;
+            newSuppilerOrg.orgName = dbMember.name;
+            newSuppilerOrg.parentId = 3;
+            if (dbMember.orgId == 3) {
+            } else {
+                newSuppilerOrg.parentId = 5;
+            }
+            newSuppilerOrg.orgName = dbMember.name;
+            newSuppilerOrg = await conn.getRepository(Org).save(newSuppilerOrg);
+            dbMember.orgId = newSuppilerOrg.orgId;
+            dbMember.memberStatus = AuditStatusEnum.approved;
+            await conn.getRepository(Member).save(dbMember);
+            this.ctx.body = success(newSuppilerOrg);
+
+
+        } else {
+            return this.ctx.body = err(400, '会员信息不存在');
+
+        }
+
+    }
+    @Post('/api/member/verify/fail')
+    async verifyMemberFail() {
+        let member = this.ctx.request.body;
+        if (member.id) {
+            await conn.getRepository(Member).delete(member);
+            this.ctx.body = success('ok');
+        } else {
+            this.ctx.body = err(400, '参数不全')
+        }
+    }
+
+    @Post('/api/order/give')
+    async orderGive() {
+        let { order, user } = this.ctx.request.body;
+        user = await conn.getRepository(User).findOne(user.id);
+        if (user) {
+            let member = await conn.getRepository(Member).findOne({ user: user });
+            order = await conn.getRepository(Order).findOne(order.id);
+            if (member && order) {
+                order.masterMemberId = member.id;
+                await conn.getRepository(Order).save(order);
+                let notify = await this.service.lib.notify.orderGiveNotify(user.id, '', order.id);
+                this.ctx.body = success({ order, notify });
+
+            } else {
+                this.ctx.body = err(400, '会员或订单不存在');
+            }
+        } else {
+            this.ctx.body = err(400, '不存在的用户');
+        }
+    }
+
+    @Post('/api/order/action')
+    async orderAction() {
+        let { order, action, msg } = this.ctx.request.body;
+
+        order = await conn.getRepository(Order).findOne(order.id);
+        if (order) {
+            switch (action) {
+                case ActionEnum.orderConfirm:
+                    await conn.getRepository(Order).save(order);
+                    await this.service.lib.notify.orderConfirmNotify(order.creatorId, '', order.id, msg);
+                    return this.ctx.body = success({ msg: '订单确认成功' });
+                case ActionEnum.depositPaid:
+                    order.status = OrderStatusEnum.DEPOSIT_PAID;
+                    await conn.getRepository(Order).save(order);
+                    await this.service.lib.notify.orderDepositPaidNotify(order.creatorId, '', order.id, msg);
+                    return this.ctx.body = success({ msg: '订单定金已付' });
+                case ActionEnum.outTicket:
+                    order.status = OrderStatusEnum.TICKET_OUT;
+                    await conn.getRepository(Order).save(order);
+                    await this.service.lib.notify.orderConfirmNotify(order.creatorId, '', order.id, msg);
+                    return this.ctx.body = success({ msg: '订单已出票' });
+                case ActionEnum.outTicket:
+                    order.status = OrderStatusEnum.ALL_PAID;
+                    await conn.getRepository(Order).save(order);
+                    await this.service.lib.notify.orderConfirmNotify(order.creatorId, '', order.id, msg);
+                    return this.ctx.body = success({ msg: '订单全款已付' });
+
+                default:
+                    return this.ctx.body = err(400, '未知的操作');
+            }
+        } else {
+            return this.ctx.body = err(400, '订单不存在');
+        }
+    }
+
 }

@@ -30,4 +30,6 @@ export class Airport {
     pinyin: string;
     @Column({ nullable: true })
     cityName: string;
+    @Column({ nullable: false })
+    cityId: number;
 }

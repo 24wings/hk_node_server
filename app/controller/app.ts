@@ -183,6 +183,7 @@ export default class extends Controller {
             this.ctx.body = err(404, '会员找不到');
         }
     }
+
     // /**现金账户 */
     // @bp.get('/app/member/accountDetail')
     // async accountDetail() {

@@ -10,12 +10,8 @@ export class ProductUnion {
     @Prop()
     id: number;
     @Column()
-    cityName: string;
-    @Column()
-    cityCode: string;
-    @Column()
-    cityPinyin: string;
-    @Column()
+    cityId: number;
+    @Column('decimal')
     unionPrice: number;
     @Column()
     productId: number;
