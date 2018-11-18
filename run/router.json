@@ -460,6 +460,18 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/supplier/signup",
+    "regexp": "/^\\/api\\/supplier\\/signup(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/dev/menu/sync",
     "regexp": "/^\\/dev\\/menu\\/sync(?:\\/(?=$))?$/",
     "stack": [

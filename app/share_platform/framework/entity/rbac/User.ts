@@ -30,7 +30,8 @@ export class User {
     creatorId: number;
     @Column({ nullable: true, length: 200 })
     roleIds: string;
-
+    @Column({ nullable: true })
+    isSystem: boolean = false;
 
 
 }

@@ -25,13 +25,13 @@ export class Member {
     @Column()
     code: string;
     /**名称*/
-    @Column()
+    @Column({ unique: true })
     name: string;
     /**手机号(用来收验证码)*/
-    @Column()
+    @Column({ unique: true })
     mobile: string;
     /**负责人姓名*/
-    @Column()
+    @Column({ nullable: true })
     principal: string;
     /**联系地址*/
     @Column()
@@ -55,4 +55,5 @@ export class Member {
     password?: string | any;
     /**前端字段 */
     orgId?: number;
+    user?: any;
 }

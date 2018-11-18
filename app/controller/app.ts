@@ -261,6 +261,7 @@ export default class extends Controller {
         let newProd: Product = this.ctx.request.body;
         newProd = Object.assign(new Product(), newProd);
         let cat = await conn.getRepository(ProdCatalog).findOne({ id: newProd.prodCatId });
+        // newProd.boundFlight
         if (cat) {
             // newProd.catName = cat.catName;
             // newProd.catCode = cat.catCode;

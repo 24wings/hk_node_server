@@ -31,5 +31,7 @@ export class Role {
     @ManyToMany(_ => Menu, menu => menu.roles)
     @JoinTable()
     menus: Menu[];
+    @Column({ nullable: true })
+    isSystem: boolean = false;
 
 }

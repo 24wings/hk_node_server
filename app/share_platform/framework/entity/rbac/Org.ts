@@ -7,7 +7,6 @@ export class Org {
     @PrimaryGeneratedColumn()
     @Prop()
     orgId: number;
-
     @Column({ nullable: false, length: 20 })
     orgName: string;
     @Column()
@@ -17,7 +16,8 @@ export class Org {
     creator: string;
     @Column({ nullable: true })
     createTime: Date = new Date();
-
+    @Column({ nullable: true })
+    isSystem: boolean = false;
 
 
 
