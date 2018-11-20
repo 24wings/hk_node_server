@@ -10,7 +10,7 @@ export class AirCompany {
     @Column({ nullable: false, unique: true, length: 10 })
     /**航司代码*/
     code: string;
-    @Column({ nullable: false, unique: true, length: 20 })
+    @Column({ nullable: false, length: 10 })
     /**航司全名*/
     name: string;
     // @Column({ nullable: false })

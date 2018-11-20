@@ -9,7 +9,7 @@ Date.prototype.format = function (fmt) {
     "s+": this.getSeconds(), //秒
     "q+": Math.floor((this.getMonth() + 3) / 3), //季度
     S: this.getMilliseconds() //毫秒
-  };
+  }; 
   if (/(y+)/.test(fmt)) {
     fmt = fmt.replace(
       RegExp.$1,
