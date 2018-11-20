@@ -12,8 +12,6 @@ export class Role {
     roleId: number;
     @Column({ nullable: false, length: 50 })
     roleName: string;
-    @Column({ nullable: false, length: 50 })
-    roleCode: string;
     @Column({ nullable: true })
     createTime: Date;
     @Column({ nullable: true })

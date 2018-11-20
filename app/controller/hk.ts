@@ -15,6 +15,7 @@ import { Airport } from '../share_platform/hk/entity/Airport';
 import { Org } from '../share_platform/framework/entity/rbac/Org';
 import { Order } from '../share_platform/hk/entity/Order';
 import { OrderStatusEnum } from '../share_platform/hk/enum/OrderStatus.enum';
+import { OrderRefound } from '../share_platform/hk/entity/OrderRefound';
 enum ActionEnum {
     orderConfirm = 'order-confirm',
     depositPaid = 'deposit-paid',
@@ -26,6 +27,45 @@ enum ActionEnum {
 }
 
 export default class extends Controller {
+    @Post('/api/order/refound-request')
+    async  orderRequest() {
+        let { order, refound } = this.ctx.request.body;
+
+        if (order && refound) {
+            let dbOrder = await conn.getRepository(Order).findOne(order.id);
+            if (dbOrder) {
+                let newOrderRefound = new OrderRefound();
+
+                newOrderRefound.refundNo = '' + await this.service.framework.util.getNo('order-refound');
+                newOrderRefound.amount = dbOrder.amount;
+                newOrderRefound.boundDate = dbOrder.boundDate;
+                newOrderRefound.boundFlightCode = dbOrder.boundFlightCode;
+                newOrderRefound.orderId = dbOrder.id;
+                newOrderRefound.orderNo = dbOrder.orderNo;
+                newOrderRefound.price_a = dbOrder.price_a;
+                newOrderRefound.price_c = dbOrder.price_c;
+                newOrderRefound.productCode = dbOrder.productCode;
+                // newOrderRefound.productId=dbOrder.productCode;
+                newOrderRefound.returnDate = dbOrder.returnDate;
+                newOrderRefound.refundcount_a = refound.refundcount_a;
+                newOrderRefound.refundcount_c = refound.refundcount_c;
+                // newOrderRefound.supplier_amt = refound.supplier_amt;
+                newOrderRefound.remark = refound.remark;
+                newOrderRefound.refund_amt = refound.refund_amt;
+
+                newOrderRefound.returnFlightCode = dbOrder.returnFlightCode;
+                newOrderRefound = await conn.getRepository(OrderRefound).save(newOrderRefound);
+                this.ctx.body = success(newOrderRefound);
+
+            } else {
+                this.ctx.body = err(400, '找不到订单');
+            }
+        } else {
+            this.ctx.body = err(400, '未找到订单或退款信息');
+        }
+    }
+
+
     @Post('/dev/sync')
     async menuSync() {
         let databases: { database: string, tables: { objectCode: string, dataItems: any[] }[] }[] = this.ctx.request.body;
@@ -155,20 +195,17 @@ export default class extends Controller {
         user.roleIds = '102';
         if (!exsitMember) {
             let no = await this.service.framework.util.getNo(member.memberType + '');
-            switch (member.memberType) {
-                case MemberType.AGENT:
-                    member.code = 'A' + _.padStart(no + '', 8, "0");
-                    user.roleIds = '103';
-                    break;
-                case MemberType.CONSUMER:
-                    member.code = 'C' + _.padStart(no + '', 8, "0");
-                    user.roleIds = '104';
-
-                    break;
-                case MemberType.SUPPLIER:
-                    member.code = 'S' + _.padStart(no + '', 8, "0");
-                    user.roleIds = '102';
-                    break;
+            if (member.memberType == MemberType.AGENT || member.memberType == "AGENT" as any) {
+                member.code = 'A' + _.padStart(no + '', 8, "0");
+                user.roleIds = '103';
+            } else if (member.memberType == MemberType.CONSUMER || member.memberType == "CONSUMER" as any) {
+                member.code = 'C' + _.padStart(no + '', 8, "0");
+                user.roleIds = '104';
+            } else if (member.memberType == MemberType.SUPPLIER || member.memberType == "SUPPLIER" as any) {
+                member.code = 'S' + _.padStart(no + '', 8, "0");
+                user.roleIds = '102';
+            } else {
+                return this.ctx.body = err(400, '未知的会员类型')
             }
             user = await conn.getRepository(User).save(user);
             member.user = user;
@@ -193,16 +230,16 @@ export default class extends Controller {
         if (!exsitMember) {
             let no = await this.service.framework.util.getNo(member.memberType + '');
             switch (member.memberType) {
-                case MemberType.AGENT:
+                case MemberType.AGENT || "AGENT":
                     member.code = 'A' + _.padStart(no + '', 8, "0");
                     user.roleIds = '103';
                     break;
-                case MemberType.CONSUMER:
+                case MemberType.CONSUMER || "CONSUMER":
                     member.code = 'C' + _.padStart(no + '', 8, "0");
                     user.roleIds = '104';
 
                     break;
-                case MemberType.SUPPLIER:
+                case MemberType.SUPPLIER || "SUPPLIER":
                     member.code = 'S' + _.padStart(no + '', 8, "0");
                     user.roleIds = '102';
                     break;

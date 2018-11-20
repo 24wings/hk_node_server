@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { MetaEntity } from '../../framework/util/metadata/MetaEntity';
 import { ProductTargetEnum } from '../enum/ProductTarget';
-import { Decimal } from 'decimal.js'
+// import { Decimal } from 'decimal.js'
 import { Prop } from '../../framework/util/metadata/Field';
 import { OrderStatusEnum } from '../enum/OrderStatus.enum';
 @MetaEntity()
@@ -9,10 +9,10 @@ import { OrderStatusEnum } from '../enum/OrderStatus.enum';
 export class Order {
     @PrimaryGeneratedColumn()
     @Prop()
-    id: Number;
+    id: number;
     /**订单号:前缀+年月日+6位流水号A20180101000001*/
     @Column({ nullable: true })
-    orderNo: number;
+    orderNo: string;
     @Column({ comment: "产品代码" })
     productCode: string;
     @Column()
@@ -38,10 +38,10 @@ export class Order {
     tripInfo: string;
     /**成人价*/
     @Column('decimal')
-    price_a: Decimal;
+    price_a: number;
     /**儿童价*/
     @Column('decimal')
-    price_c: Decimal;
+    price_c: number;
     /**成人数*/
     @Column('integer')
     count_a: number;
@@ -50,7 +50,7 @@ export class Order {
     count_c: number;
     /**订单金额*/
     @Column('decimal')
-    amount: Decimal;
+    amount: number;
     /**乘客信息*/
     @Column()
     passengerInfo: string;

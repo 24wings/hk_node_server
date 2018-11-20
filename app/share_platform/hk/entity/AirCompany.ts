@@ -7,10 +7,10 @@ export class AirCompany {
     @PrimaryGeneratedColumn()
     /**航司Id*/
     id: number;
-    @Column({ nullable: false })
+    @Column({ nullable: false, unique: true, length: 10 })
     /**航司代码*/
     code: string;
-    @Column({ nullable: false })
+    @Column({ nullable: false, unique: true, length: 20 })
     /**航司全名*/
     name: string;
     // @Column({ nullable: false })

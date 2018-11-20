@@ -6,6 +6,7 @@ require('../../share_platform/framework/entity/rbac/MetaField')
 import { conn } from '../../typeorm';
 import { QueryCondition } from '../../share_platform/framework/util/metadata/QueryCondition';
 import { getPower } from '../../Power';
+import { err } from '../../share_platform/framework/util/res/err';
 // import { Member } from '../../share_platform/market/entity/member/Member';
 // import { pageParameter } from '../../share_platform/framework/util/metadata/pageParameter';
 // let dir='../../share_platform'
@@ -101,8 +102,14 @@ export default class extends Service {
     }
 
     async    entityInsert(entityPath: string, values: any) {
-        let entity = this.getEntity(entityPath)
-        return conn.getRepository(entity).save(values);
+        let newData;
+        try {
+            let entity = this.getEntity(entityPath)
+            newData = await conn.getRepository(entity).save(values);
+        } catch (e) {
+            if (e) throw err(400, '唯一错误');
+        }
+        return newData;
     }
     async entityUpdate(entityPath: string, updateObject: any) {
         // let className = '/share_platform/' + (entityPath as string).replace('com.fastsun.', '').replace(/\./g, '/');

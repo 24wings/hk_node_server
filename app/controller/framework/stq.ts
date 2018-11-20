@@ -18,7 +18,12 @@ export default class extends Controller {
     @validate
     @Post('/app/stq/entity/insert')
     async dataInsert(@Query({ className: 'string' }) className: string, @Body(Object) dataItem) {
-        let insert = await this.service.framework.stq.entityInsert(className, dataItem);
+        let insert;
+        try {
+            insert = await this.service.framework.stq.entityInsert(className, dataItem);
+        } catch (e) {
+            if (e) return this.ctx.body = err(400, '唯一错误');
+        }
         this.ctx.body = success({ insert });
     }
     @validate
@@ -75,7 +80,12 @@ export default class extends Controller {
     async entityInsert() {
         let { entity } = this.ctx.query;
         let { dataItems } = this.ctx.body;
-        let inserts = await this.service.framework.stq.entityInsert(entity, dataItems as any[]);
+        let inserts = []
+        try {
+            inserts = await this.service.framework.stq.entityInsert(entity, dataItems as any[]);
+        } catch (e) {
+            if (e) return this.ctx.body = err(500, '唯一错误');
+        }
         this.ctx.body = success(inserts);
     }
 

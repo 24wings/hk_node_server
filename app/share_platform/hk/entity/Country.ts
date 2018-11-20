@@ -8,9 +8,9 @@ export class Country {
     @PrimaryGeneratedColumn()
     id: number;
     /**国家代码*/
-    @Column()
+    @Column({ nullable: false, unique: true, length: 20 })
     code: string;
     /**国家名*/
-    @Column()
+    @Column({ nullable: false, unique: true, length: 20 })
     name: string;
 }
