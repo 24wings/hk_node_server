@@ -27,6 +27,18 @@ enum ActionEnum {
 }
 
 export default class extends Controller {
+    @Post('/api/product/verify/pass')
+    async productVerifyPassword() {
+        let prod = this.ctx.request.body;
+        if (prod) {
+            if (prod.id) {
+                await conn.getRepository(Product).update(prod.id, { auditStatus: AuditStatusEnum.approved })
+                return this.ctx.body = success({ msg: '审核成功' })
+            }
+        }
+        return this.ctx.body = err(400, '找不到产品');
+    }
+
     @Post('/api/order/refound-request')
     async  orderRequest() {
         let { order, refound } = this.ctx.request.body;

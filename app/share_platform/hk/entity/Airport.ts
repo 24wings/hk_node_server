@@ -26,8 +26,8 @@ export class Airport {
     /**城市三字代码*/
     cityCode: string;
 
-    @Column({ nullable: false })
-    pinyin: string;
+    // @Column({ nullable: false })
+    // pinyin: string;
     @Column({ nullable: true })
     cityName: string;
     @Column({ nullable: false })

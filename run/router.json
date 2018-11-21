@@ -412,6 +412,18 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/product/verify/pass",
+    "regexp": "/^\\/api\\/product\\/verify\\/pass(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/order/refound-request",
     "regexp": "/^\\/api\\/order\\/refound-request(?:\\/(?=$))?$/",
     "stack": [
