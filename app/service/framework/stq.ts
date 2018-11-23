@@ -88,7 +88,6 @@ export default class extends Service {
             metaObject.objectCode = entityPath;
             return {
                 metaObject,
-                // metaFields,
                 prop: getProp(entity.prototype)
             }
         } else {
@@ -113,7 +112,8 @@ export default class extends Service {
     }
     async entityUpdate(entityPath: string, updateObject: any) {
         // let className = '/share_platform/' + (entityPath as string).replace('com.fastsun.', '').replace(/\./g, '/');
-        let entity = this.getEntity(entityPath)
+        let entity = this.getEntity(entityPath);
+        if (!entity || !updateObject) console.error('error  not found entity,or not found updateObject');
         let id = conn.getRepository(entity).getId(updateObject);
         return conn.getRepository(entity).update(id, updateObject);
     }

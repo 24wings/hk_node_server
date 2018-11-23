@@ -1,5 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, JoinTable, ManyToMany } from 'typeorm';
-import { Menu } from './Menu';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { MetaEntity } from '../../util/metadata/MetaEntity';
 import { Prop } from '../../util/metadata/Field';
 
@@ -26,9 +25,9 @@ export class Role {
     @Column({ nullable: false })
     orgId: number;
 
-    @ManyToMany(_ => Menu, menu => menu.roles)
-    @JoinTable()
-    menus: Menu[];
+    // @ManyToMany(_ => Menu, menu => menu.roles)
+    // @JoinTable()
+    // menus: Menu[];
     @Column({ nullable: true })
     isSystem: boolean = false;
 

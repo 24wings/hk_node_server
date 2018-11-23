@@ -5,14 +5,13 @@ import { bp } from 'egg-blueprint';
 import { Condtions } from '../../share_platform/framework/util/metadata/Condition';
 import { Post } from '../../share_platform/framework/util/router/mapping';
 import { validate, Body, Query } from '../../share_platform/framework/util/router/validate';
-import { MetaWithItem } from '../../share_platform/framework/bean/MetaWithItem';
 import { err } from '../../share_platform/framework/util/res/err';
 export default class extends Controller {
     /**实体更新 */
     @validate
     @Post("/app/stq/entity/update")
-    async dataUpdate(@Query({ className: 'string' }) className, @Body(MetaWithItem) body) {
-        let result = await this.service.framework.stq.entityUpdate(className, body);
+    async dataUpdate(@Query({ className: 'string' }) className) {
+        let result = await this.service.framework.stq.entityUpdate(className, this.ctx.request.body);
         this.ctx.body = success(result);
     }
     @validate
