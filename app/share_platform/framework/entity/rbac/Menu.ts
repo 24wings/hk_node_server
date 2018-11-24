@@ -51,7 +51,7 @@ export class Menu {
     config: string;
     @Column({ nullable: true })
     menuCode: number;
-    @ManyToMany(_ => Role, role => role.menus)
-    roles: Role[];
+    // @ManyToMany(_ => Role, role => role.menus)
+    // roles: Role[];
 
 }
